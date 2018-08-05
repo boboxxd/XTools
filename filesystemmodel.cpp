@@ -121,4 +121,5 @@ bool FileSystemModel::recursiveCheck(const QModelIndex &index, const QVariant &v
             setData(child, value, Qt::CheckStateRole);
         }
     }
+    return true;
 }

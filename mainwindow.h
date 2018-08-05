@@ -4,7 +4,8 @@
 #include <QMainWindow>
 #include <QtWidgets>
 #include "filesystemmodel.h"
-
+#include "selectimagewidget.h"
+#include "renameimagewidget.h"
 namespace Ui {
 class MainWindow;
 }
@@ -18,28 +19,12 @@ public:
     ~MainWindow();
     void initUI();
     void signalAndslots();
-public slots:
-    void onInBtn();
-    void onOutBtn();
-    void onstartTrans();
-    void onClearBtn();
-    void setTab1Filter(const QString &);
-    void getSrcImagelist(const QModelIndex&);
-    void getDirImagePath(const QModelIndex&);
-    void setEndPath();
-private:
-    void updateListModel();
+    void closeEvent(QCloseEvent *event);
 private:
     Ui::MainWindow *ui;
-    QStringList currentpath;
-    FileSystemModel *model;
 
-    QStringList selectlist;
-    QStringListModel *listmodel;
-    QString tab1filter;
-    QString tab1dirpath;
-
-    QString savepath;
+    SelectImageWidget *widget1;
+    RenameImageWidget *widget2;
 };
 
 #endif // MAINWINDOW_H

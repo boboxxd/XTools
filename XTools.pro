@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui QtConcurrent
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -27,15 +27,21 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     filesystemmodel.cpp \
-    copytask.cpp
+    selectimagewidget.cpp \
+    renameimagewidget.cpp \
+    task.cpp
 
 HEADERS += \
         mainwindow.h \
     filesystemmodel.h \
-    copytask.h
+    selectimagewidget.h \
+    renameimagewidget.h \
+    task.h
 
 FORMS += \
-        mainwindow.ui
+        mainwindow.ui \
+    selectimagewidget.ui \
+    renameimagewidget.ui
 
 RESOURCES += \
     resource.qrc
