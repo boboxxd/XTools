@@ -21,8 +21,6 @@ MainWindow::~MainWindow()
 
 void MainWindow::initUI()
 {
-    //ui->logconsole->addAction();
-    //
     widget1 = new SelectImageWidget;
     widget1->setlogconsle(ui->logconsole);
     ui->tabWidget->insertTab(0,widget1,"图片挑选 ");

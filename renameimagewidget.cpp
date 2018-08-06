@@ -88,6 +88,7 @@ void TaskWidget::onSelectBtn()
         reset();
         return;
     }
+    this->setTitle(QString(tr("Task: %1")).arg(savePath));
     okbtn->setEnabled(true);
     cancelbtn->setEnabled(false);
 
@@ -117,7 +118,6 @@ void TaskWidget::onCancelBtn()
 
 void TaskWidget::oncurrentProcess(int value)
 {
-    qDebug()<<"TaskWidget::oncurrentProcess";
     bar->setValue(value);
 }
 
@@ -160,8 +160,8 @@ void RenameImageWidget::setlogconsle(QTextBrowser *log)
     addTaskWidget("task8");
     addTaskWidget("task9");
     addTaskWidget("task10");
-    addTaskWidget("task9");
-    addTaskWidget("task10");
+    addTaskWidget("task11");
+    addTaskWidget("task12");
 }
 
 bool RenameImageWidget::addTaskWidget(const QString &title)

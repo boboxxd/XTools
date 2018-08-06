@@ -9,15 +9,15 @@ class Task:public QObject
 {
     Q_OBJECT
 public:
-      virtual void setParmer(const QStringList& imagelist,const QString &path) = NULL;
-      virtual int getProcess()=NULL;
+      virtual void setParmer(const QStringList& imagelist,const QString &path) = 0;
+      virtual int getProcess()=0;
 signals:
      void resultReady();
      void msg(const QString&);
      void currentProcess(int);
 public slots:
-      virtual void doWork()=NULL;
-      virtual void stopWork() =NULL;
+      virtual void doWork()=0;
+      virtual void stopWork() =0;
 };
 
 

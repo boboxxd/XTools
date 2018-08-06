@@ -19,7 +19,6 @@ int CopyTask::getProcess()
 
 void CopyTask::doWork()
 {
-    qDebug()<<"void CopyTask::doWork()";
     running =true;
     currentprocess = 0;
     for(auto file = imagelist.begin();file!=imagelist.end();file++)
@@ -108,11 +107,9 @@ void RenameTask::doWork()
     {
         if(!running)
             break;
-        qDebug()<<"file::"<<*file;
-        QString newname = QDateTime::currentDateTime().toString("yyyyMMddhhmmsszzz%1.jpg").arg(++currentprocess);
+        QString newname = QDateTime::currentDateTime().toString("yyyyMMddhhmmss%1.jpg").arg(++currentprocess,5,10,QLatin1Char('0'));
         QDir().rename(*file,QFileInfo(*file).absolutePath()+"/"+newname);
         emit msg(QString(tr("[%1]: rename %2 to %3")).arg(currentprocess).arg(*file).arg(QFileInfo(*file).absolutePath()+"/"+newname));
-        qDebug()<<QString("==  %1").arg((currentprocess*1.0/imagelist.count())*100);
         emit currentProcess((currentprocess*1.0/imagelist.count())*100);
     } 
     emit resultReady();
