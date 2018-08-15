@@ -36,7 +36,7 @@ void CopyTask::stopWork()
     running =false;
 }
 
-
+//---------------------------------------------------------------------------------
 TaskManger::TaskManger(Task *task,QTextBrowser *logwidget)
 {
     this->logwidget = logwidget;
@@ -74,7 +74,7 @@ void TaskManger::handleResults()
     task->msg("Task finished!");
 }
 
-
+//----------------------------------------------------------------------------------
 RenameTask::RenameTask()
 {
     running = false;
@@ -118,4 +118,31 @@ void RenameTask::doWork()
 void RenameTask::stopWork()
 {
     running =false;
+}
+
+//---------------------------------------------------------------------
+VideoToImageTask::VideoToImageTask()
+{
+    running = false;
+    currentprocess =0;
+}
+
+void VideoToImageTask::setParmer(const QStringList &videolist, const QString &path)
+{
+
+}
+
+int VideoToImageTask::getProcess()
+{
+    return currentprocess;
+}
+
+void VideoToImageTask::doWork()
+{
+
+}
+
+void VideoToImageTask::stopWork()
+{
+
 }

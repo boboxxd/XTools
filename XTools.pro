@@ -7,12 +7,13 @@
 QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
-
 TARGET = XTools
 TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which has been marked as deprecated (the exact warnings
+
+
 # depend on your compiler). Please consult the documentation of the
 # deprecated API in order to know how to port your code away from it.
 DEFINES += QT_DEPRECATED_WARNINGS
@@ -29,19 +30,24 @@ SOURCES += \
     filesystemmodel.cpp \
     selectimagewidget.cpp \
     renameimagewidget.cpp \
-    task.cpp
+    task.cpp \
+    videotoimagewidget.cpp \
+    taskwidget.cpp
 
 HEADERS += \
         mainwindow.h \
     filesystemmodel.h \
     selectimagewidget.h \
     renameimagewidget.h \
-    task.h
+    task.h \
+    videotoimagewidget.h \
+    taskwidget.h
 
 FORMS += \
         mainwindow.ui \
     selectimagewidget.ui \
-    renameimagewidget.ui
+    renameimagewidget.ui \
+    videotoimagewidget.ui
 
 RESOURCES += \
     resource.qrc

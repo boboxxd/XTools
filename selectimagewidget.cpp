@@ -57,14 +57,12 @@ void SelectImageWidget::setlogconsle(QTextBrowser *log)
 
 void SelectImageWidget::onInBtn()
 {
-    qDebug()<<"onInBtn";
     selectlist= model->checkedList(0,tab1filter);
     updateListModel();
 }
 
 void SelectImageWidget::onOutBtn()
 {
-    qDebug()<<"onOutBtn";
     QModelIndex index=ui->dirlistview->currentIndex();
     logconsole->append(QString("已移除：%1").arg(index.data(Qt::EditRole).toString()));
     selectlist.removeOne(index.data(Qt::EditRole).toString());
@@ -73,7 +71,7 @@ void SelectImageWidget::onOutBtn()
 
 void SelectImageWidget::onstartTrans()
 {
-    qDebug()<<"onstartTrans";
+
     Task *task =new CopyTask;
     task->setParmer(selectlist,savepath);
     TaskManger *manager = new TaskManger(task,logconsole);
@@ -94,12 +92,12 @@ void SelectImageWidget::setTab1Filter(const QString &txt)
 
 void SelectImageWidget::getSrcImagelist(const QModelIndex &index)
 {
-    qDebug()<<model->filePath(index);
+
 }
 
 void SelectImageWidget::getDirImagePath(const QModelIndex &index)
 {
-    qDebug()<<index.data(Qt::EditRole).toString();
+
 }
 
 void SelectImageWidget::previewImage(const QModelIndex &index)
@@ -120,11 +118,9 @@ void SelectImageWidget::setEndPath()
    ui->dirlineedit->setText(savePath);
    if(!QDir(ui->dirlineedit->text()).exists())
    {
-       qDebug()<<"~~~~~~~~~~~";
        QDir dir;
        dir.mkdir(this->savepath);
    }
-   //this->savepath = ui->dirlineedit->text();
 }
 
 void SelectImageWidget::updateListModel()

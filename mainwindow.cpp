@@ -27,6 +27,10 @@ void MainWindow::initUI()
     widget2 = new RenameImageWidget;
     widget2->setlogconsle(ui->logconsole);
     ui->tabWidget->insertTab(1,widget2,"图片重命名 ");
+
+    widget3 = new VideoToImageWidget;
+    widget3->setlogconsle(ui->logconsole);
+    ui->tabWidget->insertTab(2,widget3,"视频转图片 ");
 }
 
 void MainWindow::signalAndslots()
@@ -46,6 +50,12 @@ void MainWindow::closeEvent(QCloseEvent *event)
     {
         delete widget2;
         widget2 =NULL;
+    }
+
+    if(widget3)
+    {
+        delete widget3;
+        widget3 =NULL;
     }
 }
 

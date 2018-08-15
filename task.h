@@ -1,9 +1,8 @@
-#ifndef COPYTASK_H
-#define COPYTASK_H
+#ifndef TASK_H
+#define TASK_H
 
 #include <QObject>
 #include <QtWidgets>
-
 
 class Task:public QObject
 {
@@ -57,6 +56,25 @@ private:
     int currentprocess;
 };
 
+class VideoToImageTask:public Task
+{
+    Q_OBJECT
+public:
+    VideoToImageTask();
+    void setParmer(const QStringList& videolist,const QString &path);
+    int getProcess();
+public slots:
+    void doWork();
+    void stopWork();
+signals:
+
+private:
+    bool running;
+    int currentprocess;
+    QStringList videolist; //video list
+    QString path; //save path
+};
+
 
 class TaskManger:public QObject
 {
@@ -79,4 +97,4 @@ signals:
       void stop();
 };
 
-#endif // COPYTASK_H
+#endif // TASK_H

@@ -6,6 +6,7 @@
 #include "filesystemmodel.h"
 #include "selectimagewidget.h"
 #include "renameimagewidget.h"
+#include "videotoimagewidget.h"
 namespace Ui {
 class MainWindow;
 }
@@ -25,6 +26,7 @@ private:
 
     SelectImageWidget *widget1;
     RenameImageWidget *widget2;
+    VideoToImageWidget *widget3;
 };
 
 #endif // MAINWINDOW_H
